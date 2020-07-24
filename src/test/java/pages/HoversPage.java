@@ -13,7 +13,12 @@ public class HoversPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[1]/a/span")
+    public WebElement HoverOverFleet;
+
     @FindBy(xpath = "//*[@id=\"container\"]")
     public WebElement vehicleOdometerPage;
+
+
 
 }
