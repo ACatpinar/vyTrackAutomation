@@ -29,6 +29,7 @@ public class VehicleOdometer {
     @BeforeMethod
     public void SetUp() throws InterruptedException{
         Driver.getDriver().get(ConfigurationReader.getProperty("vytrack_url"));
+        Driver.getDriver().manage().window().maximize();
 
         LoginPage loginPage = new LoginPage();
 
@@ -39,7 +40,7 @@ public class VehicleOdometer {
         loginPage.passwordInput.sendKeys(password);
 
         loginPage.loginButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         HoversPage hoversPage = new HoversPage();
         hoversPage.HoverOverFleet.click();
         hoversPage.vehicleOdometer.click();
@@ -67,15 +68,27 @@ public class VehicleOdometer {
         createVehiclePage.dateInput.click();
         String date  = "Jul 10, 2020";
         createVehiclePage.dateInput.sendKeys(date);
+        createVehiclePage.closeDateInput.click();
 
         createVehiclePage.nameInput.sendKeys(faker.name().fullName());
 
         Thread.sleep(2000);
-        createVehiclePage.addPlateButton.click();
-        createVehiclePage.addPlateButton.click();
+        createVehiclePage.addButton.click();
 
-        createVehiclePage.choosePlateButton.click();
+        Thread.sleep(2000);
+        createVehiclePage.choosePlate.click();
+
+        Thread.sleep(2000);
         createVehiclePage.selectButton.click();
+
+        Thread.sleep(2000);
+        createVehiclePage.dropDown.click();
+
+        Thread.sleep(2000);
+        createVehiclePage.saveAndClose.click();
+
+        Thread.sleep(2000);
+        Driver.getDriver().navigate().back();
 
 
 

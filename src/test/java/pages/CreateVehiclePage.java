@@ -21,15 +21,25 @@ public class CreateVehiclePage {
     @FindBy(xpath="//input[@placeholder='Choose a date']")
     public WebElement dateInput;
 
+    @FindBy(xpath = "//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[6]")
+    public WebElement closeDateInput;
+
     @FindBy(name="custom_entity_type[Driver]")
     public WebElement nameInput;
 
-    @FindBy(xpath = "//*[@id=\"custom_entity_type_License_Plate-uid-5f1a655cc41a2-container\"]/div/div[1]/button")
-    public WebElement addPlateButton;
+    @FindBy(xpath = "//div[@class='pull-right']/button")
+    public WebElement addButton;
 
-    @FindBy(xpath = "//*[@id=\"mCSB_11_container\"]/div/table/tbody/tr[12]/td[2]")
-    public WebElement choosePlateButton;
+    @FindBy(xpath = "//*[@id=\"mCSB_2_container\"]/div/table/tbody/tr[1]/td[1]")
+    public WebElement choosePlate;
 
-    @FindBy(xpath = "/html/body/div[9]/div[11]/div/div/div/span[2]/button")
+    @FindBy(xpath = "/html/body/div[7]/div[11]/div/div/div/span[2]/button")
     public  WebElement selectButton;
+
+    @FindBy(xpath= "//a[@class='btn-success btn dropdown-toggle']")
+    public WebElement dropDown;
+
+    @FindBy(xpath="//button[@class='action-button dropdown-item']")
+    public WebElement saveAndClose;
 }
+
